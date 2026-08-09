@@ -29,8 +29,8 @@
                     throw new Error(`HTTP Error Status: ${response.status}`);
                 }
                 const data = await response.json();
-                document.getElementById("temp").textContent(`${data.temp} °C`);
-                document.getElementById("hum").textContent(`${data.hum} %`);
+                document.getElementById("temp").textContent= `${data.temp} °C`;
+                document.getElementById("hum").textContent = `${data.hum} %`;
 
                 if (data.active === true){
                     console.log("System operational");
@@ -41,10 +41,9 @@
             }finally{
                 console.log("Operation finished.");
             }
-        }while (true){
-        fetchdata();
-        setTimeout(1000);
         }
+        fetchdata();
+        setInterval(fetchdata, 5000)
     </script>
   </body>
 </html>
