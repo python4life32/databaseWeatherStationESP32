@@ -31,10 +31,10 @@
                 const data = await response.json();
                 document.getElementById("temp").textContent= `${data.temp} °C`;
                 document.getElementById("hum").textContent = `${data.hum} %`;
-
+                
                 if (data.active === true){
                     console.log("System operational");
-                }
+                }   
 
             }catch(error){
                 console.log("Data fetch failed: "+error);
