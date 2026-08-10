@@ -13,13 +13,27 @@
   </head>
   <body>
     <div class="container">
-        <div class="h1 text-center m-3">Database Test</div>
-        <div class="row justify-content-md-evenly justify-content-center align-items-center row-cols-auto">
-            <div class="col card shadow border my-3 my-md-0 mx-1 mx-md-2 pop">
-                <div class="row h3 p-1 py-3 p-md-3 mx-1 align-items-center">Temperature: <div id="temp" class="col h2 my-1 text-info-emphasis">Loading data...</div></div>
+        <div class="h1 text-center m-4">Database Test</div>
+    </div>
+    <div class="container-fluid px-5">
+        <div class="row row-cols-lg-2 row-cols-1 justify-content-evenly align-items-center g-5">
+            <div class="col">
+                <div class="card shadow border pop">
+                    <div class="row ms-3 mt-3 align-items-center row-cols-auto">
+                        <div class="col h3 g-0">Temperature: </div>
+                        <div id="temp" class="col h2 text-info-emphasis">Loading data...</div>
+                    </div>
+                    <iframe class="card border shadow mx-3 mb-3" src="https://thingspeak.com/channels/3448684/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=false&results=60&title=Temperature+Chart&type=line&width=auto&height=170&update=30&yaxismin=-20&yaxismax=50"></iframe>
+                </div>
             </div>
-            <div class="col card shadow border my-3 my-md-0 mx-1 mx-md-2 pop">
-                <div class="row h3 p-1 py-3 p-md-3 mx-1 align-items-center">Humidity: <div id="hum" class="col h2 my-1 text-info-emphasis">Loading data...</div></div>
+            <div class="col">
+                <div class="card shadow border pop">
+                    <div class="row ms-3 mt-3 align-items-center row-cols-auto">
+                        <div class="col h3 g-0">Humidity: </div>
+                        <div id="hum" class="col h2 text-info-emphasis">Loading data...</div>
+                    </div>
+                    <iframe class="card border shadow mx-3 mb-3" src="https://thingspeak.com/channels/3448684/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=false&results=60&title=Temperature+Chart&type=line&width=auto&height=170&update=30&yaxismin=-20&yaxismax=50"></iframe>
+                </div>
             </div>
         </div>
     </div>
