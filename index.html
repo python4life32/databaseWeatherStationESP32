@@ -6,19 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Database test</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        .pop {transition: 0.2s ease-in-out;}
+        .pop:hover { transform:scale(1.05); }
+    </style>
   </head>
   <body>
-    <div class="container row">
-        <div>
-          <h1>Database test</h1>
+    <div class="container text-center my-5">
+        <h1>Database test</h1>
+    </div>
+    <div class="container d-flex flex-row justify-content-center">
+        <div class="card shadow mx-5 p-3 d-flex flex-row justify-content-center pop">
+            <h2>Temperature:</h2>
+            <h1 id="temp" class="ps-2 text-secondary">Loading data...</h1>
         </div>
-        <div class="col card">
-            <h2>Temperature: </h2>
-            <h1 id="temp">Loading data...</h1>
-        </div>
-        <div class="col card">
-            <h2>Humidity: </h2>
-            <h1 id="hum">Loading data...</h1>
+        <div class="card shadow p-3 mx-5 d-flex flex-row justify-content-center pop">
+            <h2>Humidity:</h2>
+            <h1 id="hum" class="ps-2 text-secondary">Loading data...</h1>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
@@ -31,8 +35,8 @@
                     throw new Error(`HTTP Error Status: ${response.status}`);
                 }
                 const data = await response.json();
-                document.getElementById("temp").textContent= `${data.temp} °C`;
-                document.getElementById("hum").textContent = `${data.hum} %`;
+                document.getElementById("temp").textContent= `${data.temp}°C`;
+                document.getElementById("hum").textContent = `${data.hum}%`;
                 
                 if (data.active === true){
                     console.log("System operational");
